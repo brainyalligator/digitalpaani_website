@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wastewater Treatment Facility - Three.js</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+  <div id="scroll-container">
+    <div id="scroll-content"></div>
+  </div>
+  <div id="ui-root">
+    <div id="dp-dashboard" class="dp-dashboard-hidden">
+      <div class="dp-card">
+        <div class="dp-card-header">
+          <span class="dp-card-title">
+            <span class="dp-card-title-text" data-text="leak">Leak detected – Reactor Tank</span>
+            <span class="dp-card-title-text" data-text="analyzing" style="opacity: 0; position: absolute; top: 0; left: 0;">Analyzing reactor</span>
+            <span class="dp-card-title-text" data-text="stable" style="opacity: 0; position: absolute; top: 0; left: 0;">System stable</span>
+          </span>
+          <span class="dp-status-indicator"></span>
+        </div>
+        <div class="dp-card-body">
+          <span class="dp-card-subtext" data-text="anomaly" style="opacity: 1;">Anomaly identified from sensor data</span>
+          <span class="dp-card-subtext" data-text="analysis" style="opacity: 0; position: absolute; top: 16px; left: 20px; right: 20px;">AI-driven root cause analysis in progress</span>
+          <span class="dp-card-subtext" data-text="stable" style="opacity: 0; position: absolute; top: 16px; left: 20px; right: 20px;">System stable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scene-root"></div>
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>

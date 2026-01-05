@@ -1,0 +1,319 @@
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* ========================================
+   NAVIGATION BAR
+   ======================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 1000;
+    height: 70px;
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #1a1a1a;
+}
+
+.nav-link.active {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.navbar-cta .btn-demo {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 0.65rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-cta .btn-demo:hover {
+    background-color: #1d4ed8;
+}
+
+/* ========================================
+   SOLUTIONS SECTION
+   ======================================== */
+
+.solutions {
+    position: relative;
+    padding-top: 70px;
+    min-height: 400vh;
+    /* 4 slides worth of scroll */
+}
+
+/* Invisible scroll track for scroll-based animations */
+.scroll-track {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+/* ========================================
+   FIXED IMAGE CAROUSEL
+   ======================================== */
+
+.carousel-container {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    z-index: 10;
+    background-color: #1a1a1a;
+}
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    pointer-events: none;
+}
+
+.carousel-image.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-image img,
+.carousel-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ========================================
+   FIXED CONTENT OVERLAY - WHITE BOX
+   ======================================== */
+
+.content-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    z-index: 20;
+    background: #ffffff;
+    border-radius: 0;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08);
+    height: 180px;
+    overflow: hidden;
+}
+
+.benefit-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.benefit-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.benefit-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 10rem;
+    padding: 2.5rem 5rem 2.5rem 4rem;
+    align-items: start;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   BENEFIT LEFT COLUMN
+   ======================================== */
+
+.benefit-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+}
+
+.benefit-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #6b7280;
+}
+
+.benefit-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+.benefit-title .highlight {
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* ========================================
+   BENEFIT RIGHT COLUMN
+   ======================================== */
+
+.benefit-right {
+    padding-top: 0.5rem;
+}
+
+.benefit-right p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #6b7280;
+    font-weight: 400;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .navbar-menu {
+        gap: 1.5rem;
+    }
+
+    .benefit-content {
+        gap: 3rem;
+    }
+
+    .benefit-title {
+        font-size: clamp(1.375rem, 3vw, 1.75rem);
+    }
+
+    .benefit-right p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 1.5rem;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .content-overlay {
+        width: calc(100% - 2rem);
+        bottom: 1.5rem;
+    }
+
+    .benefit-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2.5rem 2rem;
+    }
+
+    .benefit-title {
+        font-size: 1.25rem;
+    }
+
+    .benefit-right p {
+        font-size: 0.9375rem;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .carousel-image,
+    .benefit-slide {
+        transition: opacity 0.3s ease;
+        transform: none !important;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+button:focus-visible,
+.nav-link:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}

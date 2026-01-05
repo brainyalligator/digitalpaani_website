@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Solutions - Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="three/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- Dashboard UI -->
+  <div id="ui-root">
+    <div id="dp-dashboard" class="dp-dashboard-hidden">
+      <div class="dp-card">
+        <div class="dp-card-header">
+          <span class="dp-card-title">
+            <span class="dp-card-title-text" data-text="leak">Leak detected – Reactor Tank</span>
+            <span class="dp-card-title-text" data-text="analyzing" style="opacity: 0; position: absolute; top: 0; left: 0;">Analyzing reactor</span>
+            <span class="dp-card-title-text" data-text="stable" style="opacity: 0; position: absolute; top: 0; left: 0;">System stable</span>
+          </span>
+          <span class="dp-status-indicator"></span>
+        </div>
+        <div class="dp-card-body">
+          <span class="dp-card-subtext" data-text="anomaly" style="opacity: 1;">Anomaly identified from sensor data</span>
+          <span class="dp-card-subtext" data-text="analysis" style="opacity: 0; position: absolute; top: 16px; left: 20px; right: 20px;">AI-driven root cause analysis in progress</span>
+          <span class="dp-card-subtext" data-text="stable" style="opacity: 0; position: absolute; top: 16px; left: 20px; right: 20px;">System stable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">DigitalPaani</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="#" class="nav-link">About Us</a></li>
+        <li><a href="#" class="nav-link">Solutions</a></li>
+        <li><a href="#" class="nav-link">Resources</a></li>
+        <li><a href="#" class="nav-link">Connect</a></li>
+      </ul>
+      <button class="nav-cta">Request a Demo</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Three.js Animation -->
+  <section class="hero">
+    <div class="hero-animation">
+      <div id="scene-root"></div>
+    </div>
+    <div class="hero-text-overlay">
+      <h1 id="hero-headline" class="hero-headline">
+        <span class="line">Operational excellence</span><br>
+        <span class="line">for <span class="accent-text">water</span> and wastewater</span><br>
+        <span class="line">assets</span>
+      </h1>
+    </div>
+    <div class="hero-text-overlay-2">
+      <h2 id="hero-headline-2" class="hero-headline-2">
+        <span class="line">manual oversight</span><br>
+        <span class="line">to connected water operations.</span>
+      </h2>
+    </div>
+  </section>
+
+  <!-- Scroll Container for Animation -->
+  <div id="scroll-container">
+    <div id="scroll-content"></div>
+  </div>
+
+  <!-- Main Content (placeholder for future content) -->
+  <main class="main-content">
+    <!-- Content will be added here later -->
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
+
